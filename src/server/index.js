@@ -36,7 +36,7 @@ const schema = buildASTSchema(gql`
 const mapArticle = (article, id) => article && ({ id, ...article });
 
 const root = {
-  articles: ({readCount}) => ARTICLES.map(mapArticle),
+  articles: () => ARTICLES.map(mapArticle),
   article: ({ id }) => mapArticle(ARTICLES[id], id),
 };
 
