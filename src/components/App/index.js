@@ -5,6 +5,7 @@ import * as styles from './styled';
 
 export const Home = dynamic(() => import(/* webpackChunkName: "home" */ '../Home'));
 export const Tools = dynamic(() => import(/* webpackChunkName: "tools" */ '../Tools'));
+export const Articles = dynamic(() => import(/* webpackChunkName: "tools" */ '../Articles'));
 
 function App() {
   return (
@@ -21,11 +22,17 @@ function App() {
             Tools
           </Link>
         </li>
+        <li className={styles.navItemClass}>
+          <Link className={styles.linkClass} to="/articles">
+            Graphql Data - Articles
+          </Link>
+        </li>
       </ul>
       <div className={styles.contentClass}>
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/tools" component={Tools} />
+          <Route path="/articles" component={Articles} />
         </Switch>
       </div>
     </div>
